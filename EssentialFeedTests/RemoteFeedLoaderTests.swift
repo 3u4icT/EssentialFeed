@@ -9,7 +9,7 @@ import XCTest
 
 class RemoteFeedLoader{
     func load(){
-        HTTPClient.shared.get(from: URL.init(string: "https://a-url.com")!)
+        HTTPClient.shared.get(from: URL.init(string: "https://a-url.com")!)//here the loader has a responsibilty of locating the object that can be removed by composition
     }
 }
 
