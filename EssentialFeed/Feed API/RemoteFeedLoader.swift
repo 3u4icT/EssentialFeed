@@ -59,6 +59,8 @@ public class RemoteFeedLoader{
 
 
 
+//Using mapping models decouple your modules.
+//Classisist approach is a starging point to learn.
 private class FeedItemsMapper {
     
     
