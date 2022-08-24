@@ -31,7 +31,7 @@ public class RemoteFeedLoader{
     
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in
-            guard self != nil else { return }
+            guard self != nil else { return } // since the map function in FeedItemsMapper is static it can get invoked even when RemoteFeedLoader is deallocated.so we need to put a check via test and put a self check here.
             switch result {
             case let .success(data, response):
                 completion(FeedItemsMapper.map(data, from: response))
