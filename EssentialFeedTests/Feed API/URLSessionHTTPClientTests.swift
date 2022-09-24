@@ -12,7 +12,7 @@ import EssentialFeed
 //end to end test have dependency on network and backend so better to do it in later multi- module integration testing
 
 
-class URLSessionHTTPClient {
+class URLSessionHTTPClient : HTTPClient {
     private let session: URLSession
     
     init(session: URLSession = .shared) {
@@ -128,7 +128,7 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
     
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> URLSessionHTTPClient {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
         let sut = URLSessionHTTPClient()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
